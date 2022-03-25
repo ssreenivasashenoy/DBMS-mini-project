@@ -1,0 +1,23 @@
+/* dashboard */
+#attend {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #attend td, #attend th {
+    border: 1px solid #99ffff;
+    padding: 8px;
+  }
+  
+  #attend tr:nth-child(even){background-color: #ccffff}
+  
+  #attend tr:hover {background-color: #99ffff}
+  
+  #attend th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4dc3ff;
+    color: black;
+  }

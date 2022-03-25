@@ -1,0 +1,147 @@
+/* CSS */
+
+/* Navbar */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+}
+#nav_bar{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar{
+    background-image: linear-gradient(to right,#4dc3ff,#0099e6);
+    padding: 0 !important;
+}
+#logo{
+    height: 50px;
+    padding-left: 20px;
+}
+.navbar-nav li{
+    padding: 0px 10px;
+}
+.navbar-nav li a{
+    color: white !important;
+    font-weight: 600;
+    float: right;
+    text-align: left;
+}
+.navbar-nav li a:hover{
+    text-decoration: underline;
+}
+.fa-angle-down{
+    color: white;
+    font-size: 25px;
+}
+.navbar-toggler{
+    outline: none !important;
+}
+.navbar-name{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 20px;
+}
+.navbar-name:hover{
+    color: white;
+}
+
+
+/* Content */
+#content{
+    background-image: linear-gradient(to right,#4dc3ff,#0099e6);
+    color: white;
+    padding-top: 5%;
+}
+.branding{
+    font-size: 30px;
+    color: #006080;
+    font-weight: 600;
+    margin-top: 100px;
+}
+.btmimg{
+    width: 100%;
+}
+#pic{
+    width: auto;
+}
+.moto{
+    font-size: 25px;
+    color: #b3ecff;
+}
+.preimg{
+    height: 400px;
+    width: auto;
+    margin-top: 50px;
+}
+
+/* home */
+#mem{
+    color: grey;
+
+}
+/* Footer */
+#footer{
+    background-image: linear-gradient(to right,#4dc3ff,#0099e6);
+    color: white;
+}
+.footimg{
+    width: 100%;
+}
+.footbox{
+    padding: 20px;
+}
+.footbox img{
+    width: 140px;
+    margin-bottom: 20px;
+}
+.footbox i{
+    margin-right: 8px;
+    font-size: 25px;
+    height: 48px;
+    width: 48px;
+    text-align: center;
+    padding-top: 7px;
+    background-image: linear-gradient(to right,#4dc3ff,#0099e6);
+}
+#name{
+    font-weight: 400px;
+    font-size: 20px;
+}
+hr{
+    background-color: white;
+}
+.copyright{
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.fl{
+    list-style: none;
+    margin-top: 35px;
+    margin-right: 60px;
+} 
+.fi a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-top: 12px;
+}
+#graduate{
+    margin-left: 40px;
+}
+.fl i{
+    width: 15px;
+    height: 20px;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
+
+.button-form{
+    display: inline;
+}
