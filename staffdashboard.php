@@ -121,6 +121,7 @@ if(!isset($_SESSION['teacher']))
       </ul>
 <hr>
 
+
       <!-- showstudent -->
       <div class="tab-content" id="pills-tabContent">
         
@@ -128,6 +129,15 @@ if(!isset($_SESSION['teacher']))
           aria-labelledby="pills-showstudent-tab">
            <br>
 
+
+           <!-- <center>
+             <form action="datein.php" method="post">
+               <input type="date" name="datein" style="background-color:#0099e6; color:white; border-radius: 6px;" required>
+             </form>
+           </center>
+           <br> -->
+
+           
            <!-- exp -->
            <div class="d-flex align-items-start">
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">

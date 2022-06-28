@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2022 at 02:01 AM
+-- Generation Time: Mar 25, 2022 at 03:36 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -63,12 +63,15 @@ CREATE TABLE `attend` (
 --
 
 INSERT INTO `attend` (`AT_ID`, `S_ID`, `ATTEND`, `ST_ID`) VALUES
-(1, 'CS001', 10, 'ST001'),
-(10, 'CS002', 2, 'ST001'),
-(11, 'EC001', 2, 'ST001'),
-(12, 'ME001', 1, 'ST001'),
-(13, 'IS001', 1, 'ST001'),
-(14, 'EC003', 1, 'ST001');
+(15, 'CS001', 1, 'ST001'),
+(16, 'CS002', 1, 'ST001'),
+(17, 'CS003', 1, 'ST001'),
+(18, 'EC001', 1, 'ST001'),
+(19, 'EC002', 1, 'ST001'),
+(20, 'EC003', 1, 'ST001'),
+(21, 'IS001', 1, 'ST001'),
+(22, 'ME001', 1, 'ST001'),
+(23, 'ME002', 1, 'ST001');
 
 -- --------------------------------------------------------
 
@@ -87,10 +90,10 @@ CREATE TABLE `branch` (
 --
 
 INSERT INTO `branch` (`B_ID`, `B_NAME`, `SEATS`) VALUES
-('1', 'COMPUTER SCIENCE', 0),
-('2', 'ELECTRONICS AND COMMUNICATION', 0),
-('3', 'INFORMATION AND SCIENCE', 0),
-('4', 'MECHANICAL', 0);
+('1', 'COMPUTER SCIENCE', 3),
+('2', 'ELECTRONICS AND COMMUNICATION', 3),
+('3', 'INFORMATION AND SCIENCE', 1),
+('4', 'MECHANICAL', 2);
 
 -- --------------------------------------------------------
 
@@ -109,15 +112,15 @@ CREATE TABLE `leave` (
 --
 
 INSERT INTO `leave` (`L_ID`, `S_ID`, `DAYS`) VALUES
-(1, 'CS001', 8),
-(2, 'CS002', 3),
-(3, 'CS003', 3),
-(4, 'ME002', 2),
-(5, 'EC002', 2),
-(6, 'EC001', 1),
-(7, 'EC003', 1),
-(8, 'IS001', 1),
-(9, 'ME001', 1);
+(10, 'CS001', 1),
+(11, 'CS002', 1),
+(12, 'CS003', 1),
+(13, 'EC001', 1),
+(14, 'EC002', 1),
+(15, 'EC003', 1),
+(16, 'IS001', 1),
+(17, 'ME001', 1),
+(18, 'ME002', 1);
 
 -- --------------------------------------------------------
 
@@ -169,6 +172,18 @@ INSERT INTO `student` (`S_ID`, `S_NAME`, `B_ID`, `S_ADDRESS`) VALUES
 ('IS001', 'STU', '3', 'MANGALORE'),
 ('ME001', 'VWX', '4', 'MANGALORE'),
 ('ME002', 'YZ', '4', 'MANGALORE');
+
+--
+-- Triggers `student`
+--
+DELIMITER $$
+CREATE TRIGGER `branch_trigger` AFTER INSERT ON `student` FOR EACH ROW UPDATE branch SET SEATS = SEATS+1 WHERE B_ID=NEW.B_ID
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `branch_trigger_remove` AFTER DELETE ON `student` FOR EACH ROW UPDATE branch SET SEATS = SEATS-1 WHERE B_ID=OLD.B_ID
+$$
+DELIMITER ;
 
 --
 -- Indexes for dumped tables
@@ -229,13 +244,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `attend`
 --
 ALTER TABLE `attend`
-  MODIFY `AT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `AT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `leave`
 --
 ALTER TABLE `leave`
-  MODIFY `L_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `L_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables
